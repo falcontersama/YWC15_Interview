@@ -43,8 +43,16 @@ class Header extends Component{
       const script = document.createElement("script");
         
       script.src = "Navbar.js";
+      script.async = true;
         
       document.body.appendChild(script);
+
+      const script2 = document.createElement("script");
+      
+      script2.src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js";
+      script2.async = true;
+      
+      document.body.appendChild(script2);
     }
 
     mouseEnter() {
