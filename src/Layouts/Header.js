@@ -45,8 +45,6 @@ class Header extends Component{
         
               document.body.appendChild(script);
       }
-    
-
 
     mouseEnter() {
         console.log('mouse enter')
@@ -88,7 +86,7 @@ class Header extends Component{
           <section className="banner">
               <div id="large-header" className="large-header">
               <canvas id="demo-canvas"></canvas>
-
+  
                 <Switch>
                   <Route exact path='/' component={TextAll} />
                   <Route path='/content' component={TextContent}/>

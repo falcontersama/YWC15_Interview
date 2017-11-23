@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import "../Header.css"
 
 class TextAll extends Component{
     render(){

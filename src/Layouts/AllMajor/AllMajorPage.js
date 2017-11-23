@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import AllMajorTable from './AllMajorTable'
 import '../Header.css'
 import '../Codepen.css'
+import Background from '../../Media/Image/test.jpg';
+
 class AllMajorPage extends Component {
     constructor(props) {
       super(props);
@@ -22,9 +24,9 @@ class AllMajorPage extends Component {
         }
       );
       return (
-        <div>
+        <div style={{backgroundImage: `url(${Background})`}}>
           <br />
-          <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div style={{display: 'flex', justifyContent: 'center', color:'black'}}>
             <input type="text"
             placeholder="Search By Name"
             value={this.state.search}
@@ -37,9 +39,13 @@ class AllMajorPage extends Component {
                 width: "60%",
                 left: "50%",
                 transform: "translate(-50%,0%)",
+                backgroundColor: "white",
                 }}>
           <AllMajorTable value={dataFilterd} />
           </div>
+          <br />
+            <br />
+            <br />
         </div>
       )
     }

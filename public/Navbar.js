@@ -6,9 +6,8 @@
 
   // Toggle tranparent navbar when the user scrolls the page
  console.log("script running")
- console.log($(window).width())
 $(window).scroll(function() {
-    if($(this).scrollTop() > 100 || $(window).width() <= 768)   /*height in pixels when the navbar becomes non opaque*/ 
+    if($(this).scrollTop() > 200 || $(window).width() <= 768)   /*height in pixels when the navbar becomes non opaque*/ 
     {
         $('.opaque-navbar').addClass('opaque');
     } else {
@@ -23,8 +22,8 @@ $(window).resize(function(){
     } else {
         $('.opaque-navbar').removeClass('opaque');
     }
+    console.log($("#table_roy"));
 });
-
 
 
 (function() {
