@@ -43,7 +43,6 @@ class Header extends Component{
       const script = document.createElement("script");
         
       script.src = "Navbar.js";
-      script.async = true;
         
       document.body.appendChild(script);
     }
