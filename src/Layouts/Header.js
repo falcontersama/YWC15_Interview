@@ -28,6 +28,8 @@ const all = (
   </Tooltip>
 );
 
+
+
 class Header extends Component{
 
     constructor(props){
@@ -37,7 +39,7 @@ class Header extends Component{
         }
       }
 
-    componentWillMount(){
+    componentDidMount(){
       const script = document.createElement("script");
         
       script.src = "Navbar.js";
