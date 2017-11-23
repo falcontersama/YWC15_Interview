@@ -22,7 +22,7 @@ class AllMajorTable extends Component{
         return(
             <div>
                 <div>
-                <BootstrapTable data={ data}  scrollTop={ 'Bottom' } height="550px" >
+                <BootstrapTable data={ data}  scrollTop={ 'Bottom' } height="550px" bordered={ false } >
                     <TableHeaderColumn  width="70" dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
                     <TableHeaderColumn  width="120" dataField='firstName' dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
                     <TableHeaderColumn  width="120" dataField='major' dataAlign="center">Major</TableHeaderColumn>

@@ -37,14 +37,14 @@ class Header extends Component{
         }
       }
 
-      componentWillMount(){
-        const script = document.createElement("script");
+    componentWillMount(){
+      const script = document.createElement("script");
         
-              script.src = "Navbar.js";
-              script.async = true;
+      script.src = "Navbar.js";
+      script.async = true;
         
-              document.body.appendChild(script);
-      }
+      document.body.appendChild(script);
+    }
 
     mouseEnter() {
         console.log('mouse enter')
@@ -97,7 +97,7 @@ class Header extends Component{
                 
               </div>
         </section>
-          
+
 
           </div>
         )

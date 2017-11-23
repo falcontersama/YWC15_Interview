@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import ContentTable from './ContentTable'
+import '../Header.css'
+import '../Codepen.css'
+import Background from '../../Media/Image/test.jpg';
 
 class ContentPage extends Component {
     constructor(props) {
@@ -22,9 +25,9 @@ class ContentPage extends Component {
         }
       )
       return (
-        <div>
+        <div style={{backgroundImage: `url(${Background})`}}>
           <br />
-          <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div style={{display: 'flex', justifyContent: 'center', color:'black'}}>
             <input type="text"
             placeholder="Search By Name"
             value={this.state.search}
@@ -37,9 +40,13 @@ class ContentPage extends Component {
                 width: "60%",
                 left: "50%",
                 transform: "translate(-50%,0%)",
+                backgroundColor: "white",
                 }}>
-        <ContentTable value={dataFilterd} />
-        </div>
+          <ContentTable value={dataFilterd} />
+          </div>
+          <br />
+            <br />
+            <br />
         </div>
       );
     }

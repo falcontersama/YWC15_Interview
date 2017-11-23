@@ -18,7 +18,7 @@ class ContentTable extends Component{
         let data = this.props.value.filter(item => item.major === "content")
         return(
             <div>
-                <BootstrapTable data={ data } hover>
+                <BootstrapTable data={ data } scrollTop={ 'Bottom' } height="550px">
                     <TableHeaderColumn  width="70" dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
                     <TableHeaderColumn  width="120" dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
                     <TableHeaderColumn  width="120" dataField='major' dataAlign="center">Major</TableHeaderColumn>
