@@ -42,7 +42,13 @@ class AllMajorPage extends Component {
                 transform: "translate(-50%,0%)",
 
                 }}>
-          <AllMajorTable value={dataFilterd} value2={this.props.value2}/>
+          <AllMajorTable value={dataFilterd} 
+                         value2={this.props.value2}
+                         headerContent = {this.props.headerContent}
+                         headerDesign = {this.props.headerDesign}
+                         headerMarketing = {this.props.headerMarketing}
+                         headerProgrammer = {this.props.headerProgrammer}
+                         />
           </div>
           <br />
             <br />

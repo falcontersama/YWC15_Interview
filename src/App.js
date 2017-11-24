@@ -20,8 +20,18 @@ class App extends Component {
     this.state = {
         data : [],
         filter : 'All',
+        headerStart: false,
+        headerContent: false,
+        headerDesign: false,
+        headerMarketing: false,
+        headerProgrammer: false,
     }
     this.changeFilter = this.changeFilter.bind(this)
+    this.changeStart = this.changeStart.bind(this)
+    this.changeContent = this.changeContent.bind(this)
+    this.changeDesign = this.changeDesign.bind(this)
+    this.changeMarketing = this.changeMarketing.bind(this)
+    this.changeProgrammer = this.changeProgrammer.bind(this)
   }
 
   componentWillMount(){
@@ -29,8 +39,54 @@ class App extends Component {
         .then((res)=>{
             this.setState({data:res.data})
         })
-    
   }
+
+  changeStart(){
+    console.log(this.state.headerStart)
+    this.setState({headerContent: false, 
+                  headerContent: false, 
+                  headerDesign: false, 
+                  headerMarketing: false, 
+                  headerProgrammer: false
+                })
+  }
+
+  changeContent(){
+    console.log(this.state.headerContent)
+    if(this.state.headerContent == false){
+      this.setState({ headerContent: true })
+    }else{
+      this.setState({ headerContent: false })
+    }
+  }
+
+  changeDesign(){
+    console.log(this.state.headerDesign)
+    if(this.state.headerDesign == false){
+      this.setState({ headerDesign: true })
+    }else{
+      this.setState({ headerDesign: false })
+    }
+  }
+
+  changeMarketing(){
+    console.log(this.state.headerMarketing)
+    if(this.state.headerMarketing == false){
+      this.setState({ headerMarketing: true })
+    }else{
+      this.setState({ headerMarketing: false })
+    }
+  }
+
+  changeProgrammer(){
+    console.log(this.state.headerProgrammer)
+    if(this.state.headerProgrammer == false){
+      this.setState({ headerProgrammer: true })
+    }else{
+      this.setState({ headerProgrammer: false })
+    }
+  }
+
 
   changeFilter(filtertext){
     this.setState({filter:filtertext})
@@ -41,16 +97,27 @@ class App extends Component {
       <div >
         <Router >
           <div>
-          <Header changeFilter={this.changeFilter} value={this.state.filter}/>
+          <Header changeFilter = {this.changeFilter} 
+                  changeStart = {this.changeStart}
+                  changeContent = {this.changeContent}
+                  changeDesign = {this.changeDesign}
+                  changeMarketing = {this.changeMarketing}
+                  changeProgrammer = {this.changeProgrammer} 
+                  headerStart = {this.state.headerStart}
+                  headerContent = {this.state.headerContent}
+                  headerDesign = {this.state.headerDesign}
+                  headerMarketing = {this.state.headerMarketing}
+                  headerProgrammer = {this.state.headerProgrammer}
+                  value={this.state.filter}
+                  />
           <div>
-            <AllMajorPage value={this.state.data} value2={this.state.filter}/>
-            {/* <Switch>
-                <Route exact path='/' component={() => (<AllMajorPage value={this.state.data} />)} />
-                <Route path='/content' component={() => (<ContentPage value={this.state.data} />)} />
-                <Route path='/design' component={() => (<DesignPage value={this.state.data} />)} />
-                <Route path='/marketing' component={() => (<MarketingPage value={this.state.data} />)} />
-                <Route path='/programming' component={() => (<ProgrammingPage value={this.state.data} />)} />
-            </Switch> */}
+            <AllMajorPage value={this.state.data} 
+                          value2={this.state.filter}
+                          headerContent = {this.state.headerContent}
+                          headerDesign = {this.state.headerDesign}
+                          headerMarketing = {this.state.headerMarketing}
+                          headerProgrammer = {this.state.headerProgrammer}
+                          />
           </div>
           </div>
         </Router>

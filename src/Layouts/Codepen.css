@@ -23,7 +23,7 @@ section
 *  OPAQUE NAVBAR SECTION
 ***********************************************************************/
 .opaque-navbar {
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(255,255,255,0.8);
   /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
     
     border-bottom: 0px;

@@ -11,13 +11,25 @@ class AllMajorTable extends Component{
 
     constructor(props){
         super(props)
+        this.setText = this.setText.bind(this)
     }
 
     setText(){
-        if(this.props.value2 == "All"){
-            return this.props.value
+        let datavalue = this.props.value;
+        console.log(this.props.headerContent)
+        if(this.props.headerContent == true){
+            datavalue = datavalue.filter(item => item.major !== "content")
         }
-        return this.props.value.filter(item => item.major === this.props.value2)
+        if(this.props.headerDesign == true){
+            datavalue = datavalue.filter(item => item.major !== "design")
+        }
+        if(this.props.headerMarketing == true){
+            datavalue = datavalue.filter(item => item.major !== "marketing")
+        }
+        if(this.props.headerProgrammer == true){
+            datavalue = datavalue.filter(item => item.major !== "programming")
+        }
+        return datavalue
     }
 
     render(){
