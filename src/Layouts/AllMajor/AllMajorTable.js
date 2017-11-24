@@ -11,21 +11,26 @@ class AllMajorTable extends Component{
 
     constructor(props){
         super(props)
-        this.state = {
-            data : []
-        }
-      }
+    }
 
+    setText(){
+        if(this.props.value2 == "All"){
+            return this.props.value
+        }
+        return this.props.value.filter(item => item.major === this.props.value2)
+    }
 
     render(){
-        let data = this.props.value
+
+        let data = this.setText()
         return(
+
             <div>
                 <div>
-                <BootstrapTable data={ data}  scrollTop={ 'Top' } height="550px" bordered={ false } >
-                    <TableHeaderColumn  width="70" dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
-                    <TableHeaderColumn  width="120" dataField='firstName' dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
-                    <TableHeaderColumn  width="120" dataField='major' dataAlign="center">Major</TableHeaderColumn>
+                <BootstrapTable data={ data}  scrollTop={ 'Top' } containerStyle={ {height: '78vh' } } tableStyle={ { height: 'calc(78vh - 41px)' } } bordered={ false } >
+                    <TableHeaderColumn   dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
+                    <TableHeaderColumn  dataField='firstName' dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
+                    <TableHeaderColumn   dataField='major' dataAlign="center">Major</TableHeaderColumn>
                 </BootstrapTable>
             </div> 
 

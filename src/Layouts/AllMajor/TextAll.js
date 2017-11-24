@@ -1,10 +1,11 @@
 import React,{Component} from 'react'
 import "../Header.css"
+import Txt from '../../Media/Image/logo.png';
 
 class TextAll extends Component{
     render(){
         return(
-            <div><h1 className="main-title">YWC <span className="thin">Announcement</span></h1></div>
+            <div className="main-title"><img src="https://www.ywc.in.th/static/img/logo.png"  /></div>
         )
     }
 }

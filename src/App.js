@@ -4,10 +4,6 @@ import Header from './Layouts/Header'
 
 
 import AllMajorPage from './Layouts/AllMajor/AllMajorPage'
-import ContentPage from './Layouts/Content/ContentPage'
-import DesignPage from './Layouts/Design/DesignPage'
-import MarketingPage from './Layouts/Marketing/MarketingPage'
-import ProgrammingPage from './Layouts/Programming/ProgrammingPage'
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 import {
@@ -22,8 +18,10 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-        data : []
+        data : [],
+        filter : 'All',
     }
+    this.changeFilter = this.changeFilter.bind(this)
   }
 
   componentWillMount(){
@@ -34,20 +32,25 @@ class App extends Component {
     
   }
 
+  changeFilter(filtertext){
+    this.setState({filter:filtertext})
+  }
+
   render() {
     return (
       <div >
         <Router >
           <div>
-          <Header />
+          <Header changeFilter={this.changeFilter} value={this.state.filter}/>
           <div>
-            <Switch>
+            <AllMajorPage value={this.state.data} value2={this.state.filter}/>
+            {/* <Switch>
                 <Route exact path='/' component={() => (<AllMajorPage value={this.state.data} />)} />
                 <Route path='/content' component={() => (<ContentPage value={this.state.data} />)} />
                 <Route path='/design' component={() => (<DesignPage value={this.state.data} />)} />
                 <Route path='/marketing' component={() => (<MarketingPage value={this.state.data} />)} />
                 <Route path='/programming' component={() => (<ProgrammingPage value={this.state.data} />)} />
-            </Switch>
+            </Switch> */}
           </div>
           </div>
         </Router>

@@ -16,11 +16,6 @@ import {
   Switch
 } from 'react-router-dom'
 
-import TextAll from './AllMajor/TextAll'
-import TextContent from './Content/TextContent'
-import TextDesign from './Design/TextDesign'
-import TextMarket from './Marketing/TextMarket'
-import TextProgram from './Programming/TextProgram'
 
 const all = (
   <Tooltip id="tooltip">
@@ -39,20 +34,13 @@ class Header extends Component{
         }
       }
 
-    componentDidMount(){
+    componentWillMount(){
       const script = document.createElement("script");
         
       script.src = "Navbar.js";
       script.async = true;
         
       document.body.appendChild(script);
-
-      const script2 = document.createElement("script");
-      
-      script2.src = "http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js";
-      script2.async = true;
-      
-      document.body.appendChild(script2);
     }
 
     mouseEnter() {
@@ -67,6 +55,28 @@ class Header extends Component{
   
 
     render(){
+        let textHeader;
+        if(this.props.value == "All"){
+          textHeader = (
+            <div className="main-title"><img src="https://www.ywc.in.th/static/img/logo.png"  /></div>
+          )
+        }else if(this.props.value == "content"){
+          textHeader = (
+            <div><h1 className="main-title">Major <span className="thin">Content</span></h1></div>
+          )
+        }else if(this.props.value == "design"){
+          textHeader = (
+            <div><h1 className="main-title">Major <span className="thin">Design</span></h1></div>
+          )
+        }else if(this.props.value == "marketing"){
+          textHeader = (
+            <div><h1 className="main-title">Major <span className="thin">Marketing</span></h1></div>
+          )
+        }else if(this.props.value == "programming"){
+          textHeader = (
+            <div><h1 className="main-title">Major <span className="thin">Programmer</span></h1></div>
+          )
+        }
         return(
           <div>
             <Navbar fixedTop fluid={true} inverse className="opaque-navbar">
@@ -83,27 +93,19 @@ class Header extends Component{
                 
               <Nav>
                  
-                <NavItem><OverlayTrigger placement="bottom" overlay={all}><Link to='/'><div >Start</div></Link></OverlayTrigger></NavItem>
+                <NavItem onClick={() => this.props.changeFilter("All")}><div style={{color:"black"}}>Start</div></NavItem>
                 
-                <NavItem><Link to='/content'>Content</Link></NavItem>
-                <NavItem><Link to='/design'>Design</Link></NavItem>
-                <NavItem><Link to='/marketing'>Marketing</Link></NavItem>
-                <NavItem><Link to='/programming'>Programmer</Link></NavItem>
+                <NavItem onClick={() => this.props.changeFilter("content")}>Content</NavItem>
+                <NavItem onClick={() => this.props.changeFilter("design")}>Design</NavItem>
+                <NavItem onClick={() => this.props.changeFilter("marketing")}>Marketing</NavItem>
+                <NavItem onClick={() => this.props.changeFilter("programming")}>Programmer</NavItem>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
           <section className="banner">
               <div id="large-header" className="large-header">
               <canvas id="demo-canvas"></canvas>
-  
-                <Switch>
-                  <Route exact path='/' component={TextAll} />
-                  <Route path='/content' component={TextContent}/>
-                  <Route path='/design'  component={TextDesign}/>
-                  <Route path='/marketing'  component={TextMarket}/>
-                  <Route path='/programming'  component={TextProgram}/>
-                </Switch>
-                
+                {textHeader}
               </div>
         </section>
 

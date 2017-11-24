@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import AllMajorTable from './AllMajorTable'
 import '../Header.css'
 import '../Codepen.css'
-import Background from '../../Media/Image/test.jpg';
+import Background from '../../Media/Image/matrix.jpg';
 
 class AllMajorPage extends Component {
     constructor(props) {
       super(props);
-      this.products = this.props.value
+
       this.state = {
-        data: this.props.value,
-        search: '',
+        search: "",
       };
     }
     updateSearch(event){
@@ -18,13 +17,15 @@ class AllMajorPage extends Component {
     }
   
     render() {
-      let dataFilterd = this.state.data.filter(
+      let dataFilterd = this.props.value.filter(
         (data)=>{
           return data.firstName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
         }
       );
       return (
-        <div style={{backgroundImage: `url(${Background})`}}>
+        <div style={{backgroundImage: `url(${Background})`, backgroundSize:"cover"}}>
+          <br />
+          <br />
           <br />
           <div style={{display: 'flex', justifyContent: 'center', color:'black'}}>
             <input type="text"
@@ -39,9 +40,9 @@ class AllMajorPage extends Component {
                 width: "60%",
                 left: "50%",
                 transform: "translate(-50%,0%)",
-                backgroundColor: "white",
+
                 }}>
-          <AllMajorTable value={dataFilterd} />
+          <AllMajorTable value={dataFilterd} value2={this.props.value2}/>
           </div>
           <br />
             <br />
