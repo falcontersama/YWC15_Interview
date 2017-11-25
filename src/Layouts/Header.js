@@ -26,6 +26,18 @@ const design = (
   </Tooltip>
 )
 
+const marketing = (
+  <Tooltip id="tooltip">
+    <div>Select/Unselect Marketing</div>
+  </Tooltip>
+)
+
+const programmer = (
+  <Tooltip id="tooltip">
+    <div>Select/Unselect programmer</div>
+  </Tooltip>
+)
+
 class Header extends Component{
 
     constructor(props){
@@ -82,15 +94,21 @@ class Header extends Component{
                 </NavItem>
                 
                 <NavItem onClick={() => { this.props.changeFilter("design"); this.props.changeDesign(); }}>
+                  <OverlayTrigger placement="bottom" overlay={design}>
                     {this.props.headerDesign===false ? <div style={{color:"black", fontWeight:"bold"}}>Design</div>: <div style={{color:"grey", fontWeight:"bold"}}>Design</div>}
+                  </OverlayTrigger>
                 </NavItem>
                 
                 <NavItem onClick={() => { this.props.changeFilter("marketing"); this.props.changeMarketing(); }}>
+                  <OverlayTrigger placement="bottom" overlay={marketing}>  
                     {this.props.headerMarketing===false ? <div style={{color:"black", fontWeight:"bold"}}>Marketing</div>: <div style={{color:"grey", fontWeight:"bold"}}>Marketing</div>}
+                  </OverlayTrigger>
                 </NavItem>
 
                 <NavItem onClick={() => { this.props.changeFilter("programming"); this.props.changeProgrammer(); }}>
+                  <OverlayTrigger placement="bottom" overlay={programmer}>
                     {this.props.headerProgrammer===false ? <div style={{color:"black", fontWeight:"bold"}}>Programmer</div>: <div style={{color:"grey", fontWeight:"bold"}}>Programmer</div>}
+                  </OverlayTrigger>
                 </NavItem>
               </Nav>
               <Nav pullRight>
