@@ -10,6 +10,7 @@ import facebook from '../Media/Image/facebook.png'
 import twitter from '../Media/Image/twitter.png'
 import instagram from '../Media/Image/instagram.png'
 import youtube from '../Media/Image/youtube.png'
+import RandomModal from './RandomModal'
 
 // const all = (
 //   <Tooltip id="tooltip">
@@ -37,8 +38,6 @@ class Header extends Component{
       document.body.appendChild(script);
     }
 
-
-
     mouseEnter() {
         console.log('mouse enter')
         this.setState({opacity: 1})
@@ -51,28 +50,8 @@ class Header extends Component{
   
 
     render(){
+        
         let textHeader = (<div className="main-title"><img src="https://www.ywc.in.th/static/img/logo.png"  /></div>);
-        // if(this.props.value === "All"){
-        //   textHeader = (
-        //     <div className="main-title"><img src="https://www.ywc.in.th/static/img/logo.png"  /></div>
-        //   )
-        // }else if(this.props.value === "content"){
-        //   textHeader = (
-        //     <div><h1 className="main-title">Major <span className="thin">Content</span></h1></div>
-        //   )
-        // }else if(this.props.value === "design"){
-        //   textHeader = (
-        //     <div><h1 className="main-title">Major <span className="thin">Design</span></h1></div>
-        //   )
-        // }else if(this.props.value === "marketing"){
-        //   textHeader = (
-        //     <div><h1 className="main-title">Major <span className="thin">Marketing</span></h1></div>
-        //   )
-        // }else if(this.props.value === "programming"){
-        //   textHeader = (
-        //     <div><h1 className="main-title">Major <span className="thin">Programmer</span></h1></div>
-        //   )
-        // }
         return(
           <div>
             <Navbar fixedTop fluid={true} inverse className="opaque-navbar">
@@ -91,23 +70,23 @@ class Header extends Component{
               <Nav>
                 
                 <NavItem onClick={() => { this.props.changeFilter("content"); this.props.changeContent(); }}>
-                    {this.props.headerContent==false ? <div style={{color:"black", fontWeight:"bold"}}>Content</div>: <div style={{color:"grey", fontWeight:"bold"}}>Content</div>}
+                    {this.props.headerContent===false ? <div style={{color:"black", fontWeight:"bold"}}>Content</div>: <div style={{color:"grey", fontWeight:"bold"}}>Content</div>}
                 </NavItem>
                 
                 <NavItem onClick={() => { this.props.changeFilter("design"); this.props.changeDesign(); }}>
-                    {this.props.headerDesign==false ? <div style={{color:"black", fontWeight:"bold"}}>Design</div>: <div style={{color:"grey", fontWeight:"bold"}}>Design</div>}
+                    {this.props.headerDesign===false ? <div style={{color:"black", fontWeight:"bold"}}>Design</div>: <div style={{color:"grey", fontWeight:"bold"}}>Design</div>}
                 </NavItem>
                 
                 <NavItem onClick={() => { this.props.changeFilter("marketing"); this.props.changeMarketing(); }}>
-                    {this.props.headerMarketing==false ? <div style={{color:"black", fontWeight:"bold"}}>Marketing</div>: <div style={{color:"grey", fontWeight:"bold"}}>Marketing</div>}
+                    {this.props.headerMarketing===false ? <div style={{color:"black", fontWeight:"bold"}}>Marketing</div>: <div style={{color:"grey", fontWeight:"bold"}}>Marketing</div>}
                 </NavItem>
 
                 <NavItem onClick={() => { this.props.changeFilter("programming"); this.props.changeProgrammer(); }}>
-                    {this.props.headerProgrammer==false ? <div style={{color:"black", fontWeight:"bold"}}>Programmer</div>: <div style={{color:"grey", fontWeight:"bold"}}>Programmer</div>}
+                    {this.props.headerProgrammer===false ? <div style={{color:"black", fontWeight:"bold"}}>Programmer</div>: <div style={{color:"grey", fontWeight:"bold"}}>Programmer</div>}
                 </NavItem>
-
               </Nav>
               <Nav pullRight>
+                <NavItem><RandomModal/></NavItem>
                 <NavItem href="https://www.instagram.com/ywcth/"><Image src={instagram} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
                 <NavItem href="https://www.youtube.com/user/ywcth"><Image src={youtube} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
                 <NavItem href="https://twitter.com/ywcth"><Image src={twitter} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>

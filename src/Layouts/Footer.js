@@ -1,10 +1,5 @@
 import React, {Component} from 'react'
-import {
-    Tab,
-    Tabs,
-    Jumbotron } from 'react-bootstrap'
 import background from '../Media/Image/footer2.jpg'
-import circle from '../Media/Image/circle2.png'
 
 class Footer extends Component{
     render(){

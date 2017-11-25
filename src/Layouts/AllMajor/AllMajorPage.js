@@ -17,6 +17,7 @@ class AllMajorPage extends Component {
     }
   
     render() {
+    
       let dataFilterd = this.props.value.filter(
         (data)=>{
           return data.firstName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;

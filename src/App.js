@@ -7,12 +7,6 @@ import AllMajorPage from './Layouts/AllMajor/AllMajorPage'
 
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom'
 
 class App extends Component {
   
@@ -45,7 +39,6 @@ class App extends Component {
   changeStart(){
     console.log(this.state.headerStart)
     this.setState({headerContent: false, 
-                  headerContent: false, 
                   headerDesign: false, 
                   headerMarketing: false, 
                   headerProgrammer: false
@@ -54,7 +47,7 @@ class App extends Component {
 
   changeContent(){
     console.log(this.state.headerContent)
-    if(this.state.headerContent == false){
+    if(this.state.headerContent === false){
       this.setState({ headerContent: true })
     }else{
       this.setState({ headerContent: false })
@@ -63,7 +56,7 @@ class App extends Component {
 
   changeDesign(){
     console.log(this.state.headerDesign)
-    if(this.state.headerDesign == false){
+    if(this.state.headerDesign === false){
       this.setState({ headerDesign: true })
     }else{
       this.setState({ headerDesign: false })
@@ -72,7 +65,7 @@ class App extends Component {
 
   changeMarketing(){
     console.log(this.state.headerMarketing)
-    if(this.state.headerMarketing == false){
+    if(this.state.headerMarketing === false){
       this.setState({ headerMarketing: true })
     }else{
       this.setState({ headerMarketing: false })
@@ -81,7 +74,7 @@ class App extends Component {
 
   changeProgrammer(){
     console.log(this.state.headerProgrammer)
-    if(this.state.headerProgrammer == false){
+    if(this.state.headerProgrammer === false){
       this.setState({ headerProgrammer: true })
     }else{
       this.setState({ headerProgrammer: false })
@@ -108,12 +101,13 @@ class App extends Component {
                   headerDesign = {this.state.headerDesign}
                   headerMarketing = {this.state.headerMarketing}
                   headerProgrammer = {this.state.headerProgrammer}
-                  value={this.state.filter}
+                  value = {this.state.data}
+                  value2 = {this.state.filter}
                   />
           </div>
           <div>
-            <AllMajorPage value={this.state.data} 
-                          value2={this.state.filter}
+            <AllMajorPage value = {this.state.data} 
+                          value2 = {this.state.filter}
                           headerContent = {this.state.headerContent}
                           headerDesign = {this.state.headerDesign}
                           headerMarketing = {this.state.headerMarketing}
