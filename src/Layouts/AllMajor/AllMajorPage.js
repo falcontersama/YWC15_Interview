@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AllMajorTable from './AllMajorTable'
 import '../Header.css'
 import '../Codepen.css'
-import Background from '../../Media/Image/matrix.jpg';
+import Background from '../../Media/Image/matrix.jpg'
 
 class AllMajorPage extends Component {
     constructor(props) {
@@ -32,7 +32,13 @@ class AllMajorPage extends Component {
             placeholder="Search By Name"
             value={this.state.search}
             onChange={this.updateSearch.bind(this)}
-            style={{width: 200, }}
+            style={{width: 200, 
+                    float: "left",
+                    border: "3px solid #00B4CC",
+                    borderRadius: "5px",
+                    outline: "none",
+
+                  }}
             />
           </div>
           <br />

@@ -6,7 +6,10 @@ import {
   Image,
   Tooltip } from 'react-bootstrap'
 
-import logo from '../Media/Image/facebooklogo.png'
+import facebook from '../Media/Image/facebook.png'
+import twitter from '../Media/Image/twitter.png'
+import instagram from '../Media/Image/instagram.png'
+import youtube from '../Media/Image/youtube.png'
 
 // const all = (
 //   <Tooltip id="tooltip">
@@ -105,7 +108,10 @@ class Header extends Component{
 
               </Nav>
               <Nav pullRight>
-                <NavItem href="https://www.facebook.com/ywcth/"><Image src={logo} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
+                <NavItem href="https://www.instagram.com/ywcth/"><Image src={instagram} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
+                <NavItem href="https://www.youtube.com/user/ywcth"><Image src={youtube} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
+                <NavItem href="https://twitter.com/ywcth"><Image src={twitter} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
+                <NavItem href="https://www.facebook.com/ywcth/"><Image src={facebook} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
               </Nav>
             </Navbar.Collapse>
             

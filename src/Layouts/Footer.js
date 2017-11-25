@@ -3,7 +3,7 @@ import {
     Tab,
     Tabs,
     Jumbotron } from 'react-bootstrap'
-import background from '../Media/Image/footer.jpg'
+import background from '../Media/Image/footer2.jpg'
 import circle from '../Media/Image/circle2.png'
 
 class Footer extends Component{
@@ -13,6 +13,7 @@ class Footer extends Component{
                 <div style={{backgroundImage:`url(${background})`, 
                              height:"100%", 
                              backgroundSize:"cover",
+
                              }}>
 
                 <div style={{position: "relative",
@@ -20,10 +21,9 @@ class Footer extends Component{
                             left: "50%",
                             transform: "translate(-50%,0%)",}}>   
                         
-                    <div style={{backgroundImage : `url(${circle})`,
-                                 backgroundSize : "cover",
-                                }}>
+                    <div>
                         <div  style={{  backgroundColor:"transparent", 
+                                        color: "white",
                                         textAlign:"center",
                                        }}>
                             <br />
