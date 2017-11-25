@@ -4,7 +4,9 @@ import {
   NavItem,
   Nav,
   Image,
-  Tooltip } from 'react-bootstrap'
+  Tooltip,
+  OverlayTrigger
+ } from 'react-bootstrap'
 
 import facebook from '../Media/Image/facebook.png'
 import twitter from '../Media/Image/twitter.png'
@@ -12,13 +14,17 @@ import instagram from '../Media/Image/instagram.png'
 import youtube from '../Media/Image/youtube.png'
 import RandomModal from './RandomModal'
 
-// const all = (
-//   <Tooltip id="tooltip">
-//     <div>ประกาศผล</div>
-//   </Tooltip>
-// );
+const content = (
+  <Tooltip id="tooltip">
+    <div>Select/Unselect Content</div>
+  </Tooltip>
+)
 
-
+const design = (
+  <Tooltip id="tooltip">
+    <div>Select/Unselect Design</div>
+  </Tooltip>
+)
 
 class Header extends Component{
 
@@ -70,7 +76,9 @@ class Header extends Component{
               <Nav>
                 
                 <NavItem onClick={() => { this.props.changeFilter("content"); this.props.changeContent(); }}>
+                  <OverlayTrigger placement="bottom" overlay={content}>
                     {this.props.headerContent===false ? <div style={{color:"black", fontWeight:"bold"}}>Content</div>: <div style={{color:"grey", fontWeight:"bold"}}>Content</div>}
+                  </OverlayTrigger>
                 </NavItem>
                 
                 <NavItem onClick={() => { this.props.changeFilter("design"); this.props.changeDesign(); }}>

@@ -17,16 +17,16 @@ class AllMajorTable extends Component{
     setText(){
         let datavalue = this.props.value;
         console.log(this.props.headerContent)
-        if(this.props.headerContent == true){
+        if(this.props.headerContent === true){
             datavalue = datavalue.filter(item => item.major !== "content")
         }
-        if(this.props.headerDesign == true){
+        if(this.props.headerDesign === true){
             datavalue = datavalue.filter(item => item.major !== "design")
         }
-        if(this.props.headerMarketing == true){
+        if(this.props.headerMarketing === true){
             datavalue = datavalue.filter(item => item.major !== "marketing")
         }
-        if(this.props.headerProgrammer == true){
+        if(this.props.headerProgrammer === true){
             datavalue = datavalue.filter(item => item.major !== "programming")
         }
         return datavalue
