@@ -3,8 +3,10 @@ import {
   Navbar, 
   NavItem,
   Nav,
+  Image,
   Tooltip } from 'react-bootstrap'
 
+import logo from '../Media/Image/facebooklogo.png'
 
 // const all = (
 //   <Tooltip id="tooltip">
@@ -102,7 +104,11 @@ class Header extends Component{
                 </NavItem>
 
               </Nav>
+              <Nav pullRight>
+                <NavItem href="https://www.facebook.com/ywcth/"><Image src={logo} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
+              </Nav>
             </Navbar.Collapse>
+            
           </Navbar>
           <section className="banner">
               <div id="large-header" className="large-header">

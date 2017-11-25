@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Header from './Layouts/Header'
-
+import Footer from './Layouts/Footer'
 
 import AllMajorPage from './Layouts/AllMajor/AllMajorPage'
+
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 import {
@@ -95,7 +96,6 @@ class App extends Component {
   render() {
     return (
       <div >
-        <Router >
           <div>
           <Header changeFilter = {this.changeFilter} 
                   changeStart = {this.changeStart}
@@ -110,6 +110,7 @@ class App extends Component {
                   headerProgrammer = {this.state.headerProgrammer}
                   value={this.state.filter}
                   />
+          </div>
           <div>
             <AllMajorPage value={this.state.data} 
                           value2={this.state.filter}
@@ -119,9 +120,10 @@ class App extends Component {
                           headerProgrammer = {this.state.headerProgrammer}
                           />
           </div>
+          <div>
+            <Footer />
           </div>
-        </Router>
-      </div>
+        </div>
     );
   }
 }
