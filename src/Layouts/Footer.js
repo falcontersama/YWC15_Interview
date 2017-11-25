@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import background from '../Media/Image/footer2.jpg'
+import background from '../Media/Image/footer.jpg'
 
 class Footer extends Component{
     render(){
