@@ -40,9 +40,9 @@ class AllMajorTable extends Component{
             <div>
                 <div>
                 <BootstrapTable data={ data} hover condensed  scrollTop={ 'Top' } containerStyle={ {height: '78vh' } } tableStyle={ { height: 'calc(78vh - 41px)', color:"white" } } bordered={ false } >
-                    <TableHeaderColumn width="30%"   dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
-                    <TableHeaderColumn width="40%"   dataField='firstName' dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
-                    <TableHeaderColumn width="30%"  dataField='major' dataAlign="center">Major</TableHeaderColumn>
+                    <TableHeaderColumn   dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
+                    <TableHeaderColumn   dataField='firstName' dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
+                    <TableHeaderColumn   dataField='major' dataAlign="center">Major</TableHeaderColumn>
                 </BootstrapTable>
             </div> 
 
