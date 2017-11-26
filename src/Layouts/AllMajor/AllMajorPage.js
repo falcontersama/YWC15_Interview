@@ -20,7 +20,8 @@ class AllMajorPage extends Component {
     
       let dataFilterd = this.props.value.filter(
         (data)=>{
-          return data.firstName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+          let dummy = data.firstName + " " +data.lastName
+          return dummy.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
         }
       );
       return (
