@@ -60,7 +60,7 @@ class RandomModal extends Component{
             
             <div>
                 <Button bsStyle="danger" onClick={this.showModal} bsSize="small" type="submit">
-                    Random
+                    The Best
                 </Button>
 
                 <Modal
@@ -71,7 +71,7 @@ class RandomModal extends Component{
                     autofocus="false"
                 >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-lg"><h1 style={{textAlign:"center"}}>Random Mode</h1></Modal.Title>
+                    <Modal.Title id="contained-modal-title-lg"><h1 style={{textAlign:"center"}}>The Best Choice</h1></Modal.Title>
                  </Modal.Header>
                 <Modal.Body>
                     {this.state.loading ? 
