@@ -34,7 +34,7 @@ const marketing = (
 
 const programmer = (
   <Tooltip id="tooltip">
-    <div>Select/Unselect programmer</div>
+    <div>Select/Unselect programming</div>
   </Tooltip>
 )
 
@@ -107,7 +107,7 @@ class Header extends Component{
 
                 <NavItem onClick={() => { this.props.changeFilter("programming"); this.props.changeProgrammer(); }}>
                   <OverlayTrigger placement="bottom" overlay={programmer}>
-                    {this.props.headerProgrammer===false ? <div style={{color:"black", fontWeight:"bold"}}>Programmer</div>: <div style={{color:"grey", fontWeight:"bold"}}>Programmer</div>}
+                    {this.props.headerProgrammer===false ? <div style={{color:"black", fontWeight:"bold"}}>Programming</div>: <div style={{color:"grey", fontWeight:"bold"}}>Programming</div>}
                   </OverlayTrigger>
                 </NavItem>
               </Nav>
