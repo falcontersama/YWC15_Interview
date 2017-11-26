@@ -29,7 +29,6 @@ class RandomModal extends Component{
             })
       }
     
-    
     showModal() {
         this.setState({ show: true });
     }
@@ -45,7 +44,6 @@ class RandomModal extends Component{
             if(!check.some((item => temp === item))){
                 check.push(temp)
             }
-
         }
         check.push(45)
         shuffle(check)
@@ -57,7 +55,10 @@ class RandomModal extends Component{
         return(
             
             <div>
-                <Button bsStyle="danger" onClick={this.showModal} bsSize="small" type="submit">
+                <Button bsStyle="danger" 
+                        onClick={this.showModal} 
+                        bsSize="small" 
+                        type="submit">
                     The Best 20
                 </Button>
 
@@ -68,40 +69,42 @@ class RandomModal extends Component{
                     dialogClassName="custom-modal"
                 >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-lg"><div style={{textAlign:"center"}}>The Best 20</div></Modal.Title>
+                    <Modal.Title id="contained-modal-title-lg">
+                        <div style={{textAlign:"center"}}>The Best 20</div>
+                    </Modal.Title>
                  </Modal.Header>
+
                 <Modal.Body>
                     {this.state.loading ? 
-                    <Table responsive hover bordered>
-                    <thead align="center">
-                    <tr>
-                        <th>  Ref  </th>
-                        <th>  Name  </th>
-                        <th>  Major  </th>
-                    </tr>
-                    </thead>
-                    <tbody align="center">
-                    {
-                        order.map((todo,i) =>
-                        <tr key={i}>
-                            <td>{this.state.data[todo].interviewRef}</td>
-                            <td>{this.state.data[todo].firstName} {this.state.data[todo].lastName}</td>
-                            <td>{this.state.data[todo].major}</td>
-                         </tr>
-                        )
-                    }
-                    </tbody>
-                    </Table>
-                        : <div></div>
-                    }
-
                     
+                    <Table responsive hover bordered>
+                        <thead align="center">
+                        <tr>
+                            <th>  Ref  </th>
+                            <th>  Name  </th>
+                            <th>  Major  </th>
+                        </tr>
+                        </thead>
+                        <tbody align="center">
+                        {
+                            order.map((todo,i) =>
+                            <tr key={i}>
+                                <td>{this.state.data[todo].interviewRef}</td>
+                                <td>{this.state.data[todo].firstName} {this.state.data[todo].lastName}</td>
+                                <td>{this.state.data[todo].major}</td>
+                            </tr>
+                            )
+                        }
+                        </tbody>
+                    </Table>
+                    : <div></div>
+                    }
                 </Modal.Body>
+
                 <Modal.Footer>
                     <Button onClick={this.hideModal}>Close</Button>
                 </Modal.Footer>
                 </Modal>
-               
             </div>
         )
     }

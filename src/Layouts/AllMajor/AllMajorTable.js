@@ -38,15 +38,40 @@ class AllMajorTable extends Component{
         return(
 
             <div>
-                <h3 style={{color:"white", textAlign:"center"}}>จำนวน {data.length} คน</h3>
+                <h3 style={{ color:"white", 
+                             textAlign:"center" 
+                            }}>
+                            จำนวน { data.length } คน
+                </h3>
+                
                 <div>
-                <BootstrapTable data={ data} hover condensed  scrollTop={ 'Top' } containerStyle={ {height: '68vh' } } tableStyle={ { height: 'calc(78vh - 100px)', color:"white" } } bordered={ false } >
-                    <TableHeaderColumn   dataField='interviewRef' dataAlign="center" dataSort={true} isKey>ID</TableHeaderColumn>
-                    <TableHeaderColumn   dataField='firstName' dataFormat={nameFormatter} dataAlign="center">Name</TableHeaderColumn>
-                    <TableHeaderColumn   dataField='major' dataAlign="center">Major</TableHeaderColumn>
-                </BootstrapTable>
-            </div> 
+                <BootstrapTable data={ data } 
+                                hover 
+                                condensed  
+                                scrollTop={ 'Top' } 
+                                containerStyle={ {height: '68vh' } } 
+                                tableStyle={ { height: 'calc(78vh - 100px)', 
+                                               color:"white" } } 
+                                               bordered={ false } >
+                    
+                    <TableHeaderColumn  dataField='interviewRef' 
+                                        dataAlign="center" 
+                                        dataSort={true} isKey>
+                                        ID
+                    </TableHeaderColumn>
 
+                    <TableHeaderColumn  dataField='firstName' 
+                                        dataFormat={nameFormatter} 
+                                        dataAlign="center">
+                                        Name
+                    </TableHeaderColumn>
+
+                    <TableHeaderColumn  dataField='major' 
+                                        dataAlign="center">
+                                        Major
+                    </TableHeaderColumn>
+                </BootstrapTable>
+                </div> 
             </div>
         )
     }

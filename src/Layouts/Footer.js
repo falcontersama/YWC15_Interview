@@ -4,17 +4,20 @@ import background from '../Media/Image/footer.jpg'
 class Footer extends Component{
     render(){
         return(
-            <div style={{height: 'calc(100vh - 50px)', minHeight: "500px", overflow:"auto"}}>
+            <div style={{height: 'calc(100vh - 50px)', 
+                         minHeight: "500px", 
+                         overflow:"auto"}}>
+                
                 <div style={{backgroundImage:`url(${background})`, 
                              height:"100%", 
                              backgroundSize:"cover",
-
-                             }}>
+                            }}>
 
                 <div style={{position: "relative",
                             width: "50%",
                             left: "50%",
-                            transform: "translate(-50%,0%)",}}>   
+                            transform: "translate(-50%,0%)",
+                            }}>   
                         
                     <div>
                         <div  style={{  backgroundColor:"transparent", 

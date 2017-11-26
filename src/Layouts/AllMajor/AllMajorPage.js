@@ -28,27 +28,32 @@ class AllMajorPage extends Component {
         <div style={{backgroundImage: `url(${Background})`, backgroundSize:"cover"}}>
           <br />
 
-          <div style={{display: 'flex', justifyContent: 'center', color:'black'}}>
-            <input type="text"
-            placeholder="Search By Name"
-            value={this.state.search}
-            onChange={this.updateSearch.bind(this)}
-            style={{width: 200, 
-                    float: "left",
-                    border: "3px solid #00B4CC",
-                    borderRadius: "5px",
-                    outline: "none",
-
+          <div style={{display: 'flex', 
+                       justifyContent: 'center', 
+                       color:'black'
+                      }}>
+            
+          <input  type="text"
+                  placeholder="Search By Name"
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}
+                  style={{ width: 200, 
+                            float: "left",
+                            border: "3px solid #00B4CC",
+                            borderRadius: "5px",
+                            outline: "none",
                   }}
             />
           </div>
+
           <br />
-          <div style={{position: "relative",
+
+          <div  style={{position: "relative",
                 width: "60%",
                 left: "50%",
                 transform: "translate(-50%,0%)",
-
                 }}>
+
           <AllMajorTable value={dataFilterd} 
                          value2={this.props.value2}
                          headerContent = {this.props.headerContent}
@@ -57,9 +62,11 @@ class AllMajorPage extends Component {
                          headerProgrammer = {this.props.headerProgrammer}
                          />
           </div>
+
           <br />
-            <br />
-            <br />
+          <br />
+          <br />
+          
         </div>
       )
     }

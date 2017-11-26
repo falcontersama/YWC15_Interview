@@ -69,17 +69,24 @@ class Header extends Component{
 
     render(){
         
-        let textHeader = (<div className="main-title"><img src="https://www.ywc.in.th/static/img/logo.png"  /></div>);
+        let textHeader = (
+            <div className="main-title">
+              <img src="https://www.ywc.in.th/static/img/logo.png"  />
+            </div>
+            );
+
         return(
           <div>
-            <Navbar fixedTop fluid={true} inverse className="opaque-navbar">
+            <Navbar fixedTop fluid={ true } inverse className="opaque-navbar">
             <Navbar.Header>
               <Navbar.Brand>
-                <div style={{opacity: this.state.opacity}}
+                <div style={{ opacity: this.state.opacity }}
                     onMouseEnter={this.mouseEnter.bind(this)}
                     onMouseLeave={this.mouseLeave.bind(this)}
-                    onClick={() => {this.props.changeStart()}}
-                ><span style={{color:'black'}}>YWC</span><span style={{color:'orange'}}>Announcement</span></div>
+                    onClick={() => {this.props.changeStart()}}>
+                    <span style={{color:'black'}}>YWC</span>
+                    <span style={{color:'orange'}}>Announcement</span>
+                </div>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
@@ -87,46 +94,77 @@ class Header extends Component{
                 
               <Nav>
                 
-                <NavItem onClick={() => { this.props.changeFilter("content"); this.props.changeContent(); }}>
+                <NavItem onClick={() => { this.props.changeFilter("content"); 
+                                          this.props.changeContent(); 
+                                        }}>
                   <OverlayTrigger placement="bottom" overlay={content}>
-                    {this.props.headerContent===false ? <div style={{color:"black", fontWeight:"bold"}}>Content</div>: <div style={{color:"grey", fontWeight:"bold"}}>Content</div>}
+                    {this.props.headerContent===false ? 
+                      <div style={{color:"black", fontWeight:"bold"}}>Content</div>
+                      : <div style={{color:"grey", fontWeight:"bold"}}>Content</div>}
                   </OverlayTrigger>
                 </NavItem>
                 
-                <NavItem onClick={() => { this.props.changeFilter("design"); this.props.changeDesign(); }}>
+                <NavItem onClick={() => { this.props.changeFilter("design"); 
+                                          this.props.changeDesign(); }}>
                   <OverlayTrigger placement="bottom" overlay={design}>
-                    {this.props.headerDesign===false ? <div style={{color:"black", fontWeight:"bold"}}>Design</div>: <div style={{color:"grey", fontWeight:"bold"}}>Design</div>}
+                    {this.props.headerDesign===false ? 
+                      <div style={{color:"black", fontWeight:"bold"}}>Design</div>
+                      : <div style={{color:"grey", fontWeight:"bold"}}>Design</div>}
                   </OverlayTrigger>
                 </NavItem>
                 
-                <NavItem onClick={() => { this.props.changeFilter("marketing"); this.props.changeMarketing(); }}>
+                <NavItem onClick={() => { this.props.changeFilter("marketing"); 
+                                          this.props.changeMarketing(); }}>
                   <OverlayTrigger placement="bottom" overlay={marketing}>  
-                    {this.props.headerMarketing===false ? <div style={{color:"black", fontWeight:"bold"}}>Marketing</div>: <div style={{color:"grey", fontWeight:"bold"}}>Marketing</div>}
+                    {this.props.headerMarketing===false ? 
+                      <div style={{color:"black", fontWeight:"bold"}}>Marketing</div>
+                      : <div style={{color:"grey", fontWeight:"bold"}}>Marketing</div>}
                   </OverlayTrigger>
                 </NavItem>
 
-                <NavItem onClick={() => { this.props.changeFilter("programming"); this.props.changeProgrammer(); }}>
+                <NavItem onClick={() => { this.props.changeFilter("programming"); 
+                                          this.props.changeProgrammer(); }}>
                   <OverlayTrigger placement="bottom" overlay={programmer}>
-                    {this.props.headerProgrammer===false ? <div style={{color:"black", fontWeight:"bold"}}>Programming</div>: <div style={{color:"grey", fontWeight:"bold"}}>Programming</div>}
+                    {this.props.headerProgrammer===false ? 
+                      <div style={{color:"black", fontWeight:"bold"}}>Programming</div>
+                      : <div style={{color:"grey", fontWeight:"bold"}}>Programming</div>}
                   </OverlayTrigger>
                 </NavItem>
+
               </Nav>
+
               <Nav pullRight>
+
                 <NavItem><RandomModal/></NavItem>
-                <NavItem href="https://www.instagram.com/ywcth/"><Image src={instagram} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
-                <NavItem href="https://www.youtube.com/user/ywcth"><Image src={youtube} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
-                <NavItem href="https://twitter.com/ywcth"><Image src={twitter} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
-                <NavItem href="https://www.facebook.com/ywcth/"><Image src={facebook} style={{width:"30px",height:"30px"}} circle responsive/></NavItem>
+                
+                <NavItem href="https://www.instagram.com/ywcth/">
+                  <Image src={instagram} style={{width:"30px",height:"30px"}} circle responsive/>
+                </NavItem>
+
+                <NavItem href="https://www.youtube.com/user/ywcth">
+                  <Image src={youtube} style={{width:"30px",height:"30px"}} circle responsive/>
+                </NavItem>
+
+                <NavItem href="https://twitter.com/ywcth">
+                  <Image src={twitter} style={{width:"30px",height:"30px"}} circle responsive/>
+                </NavItem>
+
+                <NavItem href="https://www.facebook.com/ywcth/">
+                  <Image src={facebook} style={{width:"30px",height:"30px"}} circle responsive/>
+                </NavItem>
+
               </Nav>
+
             </Navbar.Collapse>
             
           </Navbar>
+          
           <section className="banner">
               <div id="large-header" className="large-header">
               <canvas id="demo-canvas"></canvas>
                 {textHeader}
               </div>
-        </section>
+          </section>
 
 
           </div>
