@@ -26,8 +26,7 @@ class AllMajorPage extends Component {
       return (
         <div style={{backgroundImage: `url(${Background})`, backgroundSize:"cover"}}>
           <br />
-          <br />
-          <br />
+
           <div style={{display: 'flex', justifyContent: 'center', color:'black'}}>
             <input type="text"
             placeholder="Search By Name"

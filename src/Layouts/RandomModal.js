@@ -60,7 +60,7 @@ class RandomModal extends Component{
             
             <div>
                 <Button bsStyle="danger" onClick={this.showModal} bsSize="small" type="submit">
-                    The Best
+                    The Best 20
                 </Button>
 
                 <Modal

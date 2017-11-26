@@ -38,10 +38,10 @@ class App extends Component {
 
   changeStart(){
     console.log(this.state.headerStart)
-    this.setState({headerContent: false, 
-                  headerDesign: false, 
-                  headerMarketing: false, 
-                  headerProgrammer: false
+    this.setState({headerContent: true, 
+                  headerDesign: true, 
+                  headerMarketing: true, 
+                  headerProgrammer: true
                 })
   }
 
