@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import shuffle from 'shuffle-array'
 import axios from 'axios'
 import {
-    ButtonToolbar, 
     Button,
     Modal,
     Table
@@ -40,11 +39,10 @@ class RandomModal extends Component{
     }
 
     randomData(){
-        let dummy = this.state.data
         let check = []
-        while(check.length != 19){
+        while(check.length !== 19){
             var temp = Math.floor((Math.random() * 219) + 1)
-            if(!check.some((item => temp == item))){
+            if(!check.some((item => temp === item))){
                 check.push(temp)
             }
 
@@ -68,15 +66,14 @@ class RandomModal extends Component{
                     show={this.state.show}
                     onHide={this.hideModal}
                     dialogClassName="custom-modal"
-                    autofocus="false"
                 >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-lg"><h1 style={{textAlign:"center"}}>The Best Choice</h1></Modal.Title>
+                    <Modal.Title id="contained-modal-title-lg"><div style={{textAlign:"center"}}>The Best 20</div></Modal.Title>
                  </Modal.Header>
                 <Modal.Body>
                     {this.state.loading ? 
                     <Table responsive hover bordered>
-                    <thead Align="center">
+                    <thead align="center">
                     <tr>
                         <th>  Ref  </th>
                         <th>  Name  </th>
